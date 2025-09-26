@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="homepage.css" rel="stylesheet" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Expense tracker</title>
+  </head>
+  <body>
+    <div>
+      <div class="nav-container">
+        <div class="nav-header">
+          <span>Expense Tracker Software</span>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li class="menu-bar">
+              <a href="homepage.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span>home page</span>
+              </a>
+            </li>
+            <li class="menu-bar">
+              <a href="expenseReport.html">
+                <i class="bx bxs-data icon"></i>
+                <span>expense report</span>
+              </a>
+            </li>
+            <li class="menu-bar">
+              <a href="expenseData.html">
+                <i class="bx bxs-report icon"></i>
+                <span>expense Data</span>
+              </a>
+            </li>
+            <li class="menu-bar">
+              <a href="currency.html">
+                <i class="bx bx-money"></i>
+                <span>currency converter</span>
+              </a>
+            </li>
+            <div class="logout-container">
+              <li class="logout">
+                <a href="loginpage.html">
+                  <i class="bx bx-log-out"></i>
+                  <span>log out</span>
+                </a>
+              </li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="wrapper">
+        <div class="converter-container">
+          <h1>Currency converter</h1>
+          <div class="spacing">
+            <div class="converter">
+              <select class="fromDropDown">
+                <option>Select</option>
+                <option class="USD" value="USD">USD</option>
+                <option class="EUR" value="EUR">EUR</option>
+              </select>
+              <input type="text" id="input_currency" />
+            </div>
+
+            <div class="currency">
+              <select class="toDropDown">
+                <option>Select</option>
+                <option class="GBP" value="GBP">GBP</option>
+              </select>
+              <input
+                type="text"
+                id="output_currency"
+                disabled
+                name="hello"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <br />
+          <br />
+          <button class="convert" onClick="converter()">Convert</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    "use strict";
+
+    let inpCurrency = document.querySelector("#input_currency");
+    let outCurrency = document.querySelector("#output_currency");
+    let USDcurrency = document.querySelector(".USD");
+    let EURcurrency = document.querySelector(".EUR");
+    let fromDropDown = document.querySelector(".fromDropDown");
+    let toDropDown = document.querySelector(".toDropDown");
+
+    // THis event handler tells the user to choose a currency before inputting a value//
+    inpCurrency.addEventListener("click", function () {
+      if (fromDropDown.value === "Select") {
+        alert("Please select a currency");
+      }
+    });
+
+    function converter() {
+      if (fromDropDown.value !== "Select") {
+        if (Number(inpCurrency.value)) {
+          let currentExchangeRate = prompt(
+            `Please input current exchange rate for your currency`
+          );
+          let exchangeRate = Number(inpCurrency.value) * currentExchangeRate;
+          outCurrency.placeholder = exchangeRate;
+        } else if (inpCurrency.value == "") {
+          alert("please fill in the input box below");
+        } else {
+          alert("invalid input! Please input a numerical value.");
+        }
+      } else {
+        alert("Check you have selected a currency");
+        inpCurrency.value = "";
+      }
+    }
+  </script>
+</html>

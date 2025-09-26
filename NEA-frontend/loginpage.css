@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  font-family: "poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("https://preview.redd.it/045kqfm26p681.png?auto=webp&s=44554bf492c4d8c637ccef2f4b6e812e03994ea5");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.form-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: white;
+}
+
+.Expense-Tracker p {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.form {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQcIDQ0NDQ0HCA0HBwcHDQ8IDQcNFREWFhURExMYHSggGBolGxMTITEhJSkrLi4uFx8zODMtNyg5LisBCgoKDg0NDw0NFSsZFRkrKy03LS0rKy0tKys3KystLS0tNzcrNzcrKystKysrLSstLSsrKy0rKystKysrKy0rK//AABEIARMAtwMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAAAAQIDBAUH/8QAGBABAQEBAQAAAAAAAAAAAAAAABESAQL/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBQT/xAAZEQEBAQEBAQAAAAAAAAAAAAAAERIBAhP/2gAMAwEAAhEDEQA/APiwMPRjiQMIEDBAgYIEAAAAAAAAAAAAAABAAAAAAWUMNxCghgCghgCghgChRQBMCgCQoAkHBAIHBEikSoIQSDgIEDgILBiNxkoIcEAoIIAEKGAKCGECBgCBgCBiAQOCAQEEAAQQAABVwQw3GCghghSBghSJQSFSFQQi1IVChCkIcEIUoIcEIESgkEhQBIMARgEGgMR0jFTBFQQi1MEOCJAoIYIESgQSFAEhQBIVCgEDggEDggpAwBAwDSCKgbc6iCKgCpCgLUhQCpCoUCpEVBEKmCKggVMEVChClCioCLUhQIVIUCFSFAhWoVBHSOdTCi4USFTBFQQhUwRUEIVMKLgiQqIIqAi1MCgQqSWIQqAuFCFSFQQhUwlwokWpM4CFbQRpkR0YjOCNMlAiIIuCCxnBFwQSIgi4UFiYUXBEEQRUEETBFQQgiCLghCogi4UIVMKLghCogXAQrphRpBFdIiFFwQIiFGkKIsZwRcECM4IuCIREKLggkRBFwRSIgi4IJEQRcKCREEXBFSIhRcEEiIFwhHXBGkKI+iM4I0hQWM4I0hZQjOCNMlkWIhRpCiJEQo0yUCIyIuCKREEXBBIiFGkEVIiFGkEEjOFGkGVSM4Fd4BmOyDLXJRH0xnko1hZRYygjWCBGMGWsKIRnkstYUCM4UawZCMoMtMjIkZZEaZEVIzgy0ggkZ5EaQRUjOFlpBFSMoGmQMx25GW+RhH1RhkZbZGUWMMjLfAwEYZLLfAwhHPkZb4LIRhksujJZEjDIy2wMBGGRltgZEjHIy1yWVSMslltksqkZZGWuSyMxlA175JUj1MlhvkYR9fOMMDDfAwixhgsOjAyLlz4GG+RlDLnwMOjJZDLnwWHTksiZc2Bh0ZGFTLmwWHTgu+BMubBYdPfCcCZc+Sy6MFgZ7xz5GW+C74VmMO+Q275Csx6uRlrk8MV92WOSy6MDCVcsMlh0ZLIuWGBhvksBlhgYb4GAy58DLfBYEywyWW+RkTLnyMt8llamWGSw3yWRnLDJZb5LvlWe+WHfKe+HR3yWVZ7xz98ht3yFZj1MHhvg8ONehzy58Hhvg8Fay5sDDpwMFXDmwMOnBYSmHPgsOnBYKZc2Bh04LC1MObBYdOC74KmHNgsOnBYKzlzd8Fh098JwtZ75c/fBd8ujvlPfC1nvlz98l3y6MJ74Wsd8ufvkNu+QVnL2MHh0c8Hh82nqc8OfAw6MHhNrhzYGHTgYNrhzYGHTgYNLhy4GHTgYNJhy4LDqwWF0mHL3wXfDq74ThdM4c3fBd8Onvgu+F0nfDl74Lvh098J74NM98Obvgu+HT3wnvldMd8ObvhPfLp75T3wumO+XN3yG3fIXTGXuYPDfB4ef9Hr88MMDDowMJ9GsOfAw6cDB9DDmwMOnBYPoYc2Bh04LC/Qw5sFh098F3wv0TDmwXfDpwXfC7Zw5e+C74dPfBd8Ltnvhy98J74dXfCe+Gts98OXvhPfDq74T3wu2O+HL3wnvl1d8I74XbHfDl74Do74JdsYe5zioA8t6ohwAaEEMAUEAAoXeAKhQoAoULvAFRPS6A2iel3gCojvE94A1xjqEkGnPqe8ACsv/2Q==");
+  width: 400px;
+  height: 500px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#loginCredentials1 {
+  margin-bottom: 20px;
+  color: #999696;
+}
+
+#loginCredentials2 {
+  margin-bottom: 20px;
+  color: #999696;
+}
+
+a:hover {
+  color: rgb(128, 124, 124);
+}
+
+a {
+  color: white;
+}

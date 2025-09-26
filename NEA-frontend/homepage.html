@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="homepage.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Expense tracker</title>
+  </head>
+  <body>
+
+
+    <div class="chart-canvas">
+      <div>
+        <canvas class="my-chart"> </canvas>
+      </div>
+    </div>
+    <div class="nav-container">
+      <div class="nav-header">
+        <span>Expense Tracker Software</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li class="menu-bar">
+            <a href="homepage.html">
+              <i class="bx bx-home-alt icon"></i>
+              <span>home page</span>
+            </a>
+          </li>
+          <li class="menu-bar">
+            <a href="expenseReport.html">
+              <i class="bx bxs-data icon"></i>
+              <span>expense report</span>
+            </a>
+          </li>
+          <li class="menu-bar">
+            <a href="expenseData.html">
+              <i class="bx bxs-report icon"></i>
+              <span>expense Data</span>
+            </a>
+          </li>
+          <li class="menu-bar">
+            <a href="currency.html">
+              <i class='bx bx-money'></i>
+              <span>currency converter</span>
+            </a>
+          </li>
+          <div class="logout-container">
+            <li class="logout">
+              <a href="loginpage.html">
+                <i class='bx bx-log-out'></i>
+                <span>log out</span>
+              </a>
+            </li>
+          </div>
+        </ul>  
+      </div>
+      </nav>
+    </div>
+
+    <div>
+      <div class="calContainer"> 
+        <div class="calc">
+          <input type="text" class="result" disabled name=""  placeholder="" >
+          <p>Input yearly salary below</p>
+        <input type="number" class="input">
+        <button class="calculate">calculate</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <script src="homepage.js"></script>
+</html>

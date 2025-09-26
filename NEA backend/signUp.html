@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="center">
+        <div class="Container">
+            <div class="registration"></div>
+            <div>
+              <p>Register Below.</p>
+              <br />
+                <input type="text" id="loginCredentials1" value="" placeholder="Username" /><br>
+                <input type="text" id="loginCredentials2" value="" placeholder="Password" /> <br>
+                <button>submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        let myName = document.querySelector('#loginCredentials1')
+        let myPassword = document.querySelector('#loginCredentials2')
+        let myInput = document.querySelector('button')
+
+        function userAuthentication() {
+          window.location.href = "http://127.0.0.1:5500/expense%20tracker%20project/NEA-frontend/loginpage.html"
+        }
+
+        myInput.addEventListener("click", () => {
+
+          let obj = {
+            username: myName.value,
+            password: myPassword.value,
+          };
+          
+          if (myName.value.length > 8 && !Number(myName.value)) {
+            fetch("/form", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json"
+            },
+            body:JSON.stringify(obj)
+          });
+
+          userAuthentication();
+
+          } else {
+            alert("Please input a minimum of 8 characters for your username ")
+          }
+        
+        })
+
+      </script>
+  </body>
+</html>

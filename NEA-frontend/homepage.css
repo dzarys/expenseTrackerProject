@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e4e9f7;
+}
+
+/* Home page */
+
+.nav-header {
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 10px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 5px;
+}
+.chart-canvas {
+  margin-right: 50px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.my-chart {
+  margin-top: 50px;
+  background-color: white;
+  padding: 2rem;
+  border-width: 50px;
+  border-radius: 1rem;
+  width: 600px;
+  height: 650px;
+}
+
+.nav-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 190px;
+  height: 100%;
+  padding: 10px 14px;
+  background-color: rgb(120, 22, 225);
+}
+
+.nav-container li {
+  width: 100%;
+  margin-top: 40px;
+  list-style: none;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-container i {
+  border-radius: 5px;
+  min-width: 60px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-container li a {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+
+.nav-container li a:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.nav-container li a:hover i,
+.nav-container li a:hover span {
+  color: rgb(120, 22, 225);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: calc(100% - 130px);
+}
+
+.logout-container {
+  margin-top: 293px;
+  align-items: center;
+}
+
+/* currency converter*/
+
+.wrapper {
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.converter-container {
+  background-color: white;
+  border-radius: 10px;
+
+  margin-left: 190px;
+  width: 700px;
+  height: 500px;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spacing {
+  display: flex;
+}
+
+select,
+input {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 8px 15px;
+}
+
+button {
+  width: 200px;
+  display: block;
+  padding: 10px;
+  margin: o auto;
+  border-radius: 15px;
+  background-color: rgb(120, 22, 225);
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(105, 7, 196);
+}
+
+h1 {
+  font-family: "poppins";
+  margin-bottom: 70px;
+  color: rgb(120, 22, 225);
+  font-weight: 10px;
+}
+
+/* expense report */
+
+.report-container {
+  height: 100vh;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.report-space {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  background-color: rgb(252, 248, 248);
+  width: 600px;
+  height: 650px;
+  padding: 50px 20px;
+}
+
+.report-space,
+p {
+  font-family: "poppins";
+}
+
+.report {
+  margin-top: 20px;
+}
+
+/* tax rate calculator*/
+.calContainer {
+  height: 100vh;
+  width: 400px;
+  margin-left: 350px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e9f7;
+}
+
+.calc {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 350px;
+  border-radius: 5px;
+}
+
+.result {
+  border-radius: 5px;
+  padding: 0px;
+  margin-top: -20px;
+  margin-bottom: 100px;
+  width: 280px;
+  height: 150px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.input {
+  width: 310px;
+  height: 29px;
+}
