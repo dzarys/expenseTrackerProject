@@ -1,7 +1,7 @@
 "use strict";
 
-let storedData1 = ["Darwin", "john", "Darwin365"];
-let storedData2 = ["Bradley", "pete", "Bradley"];
+let storedData1 = ["Darwin", "john", "Darwin365", "Mason"];
+let storedData2 = ["Bradley", "pete", "Bradley", "Bateman"];
 
 let userName = document.querySelector("#loginCredentials1");
 let passWord = document.querySelector("#loginCredentials2");
@@ -39,7 +39,7 @@ document.addEventListener("keydown", function Login(e) {
 //function for relocating to web application
 function webApplication() {
   window.location.href =
-    "http://127.0.0.1:5500/expense%20tracker%20project/NEA-frontend/homepage.html";
+    "http://127.0.0.1:5500/expenseTrackerProject/NEA-frontend/homepage.html";
 }
 
 //user authenticator
