@@ -13,10 +13,20 @@ con.connect().then(() => console.log("connected"));
 
 //backeend node js code to POST and receive registration
 const express = require("express");
+const path = require("path");
 const app = express();
+const cors = require("cors");
+
+// CORS options to allow requests from frontend running on port 5500
+const corsOptions = {
+  origin: "http://localhost:5500", // Allow only requests from this origin
+  methods: "GET,POST", // Allow only these methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow only these headers
+};
 
 //middleware
-app.use(express.static("public"));
+app.use(cors());
+app.use(express.static(path.join(__dirname, "NEA-frontend")));
 app.use(express.json());
 
 //signup page where information of URL is requested from the server
@@ -52,6 +62,17 @@ app.delete("/delete/:username", (req, res) => {
       res.send(err);
     } else {
       res.send(result);
+    }
+  });
+});
+
+app.get("/fetchdata", (req, res) => {
+  const fetch_query = "SELECT * from expensesheet";
+  con.query(fetch_query, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result.rows);
     }
   });
 });

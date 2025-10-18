@@ -1,12 +1,8 @@
 "use strict";
 
-let storedData1 = ["Darwin", "john", "Darwin365", "Mason"];
-let storedData2 = ["Bradley", "pete", "Bradley", "Bateman"];
-
+//The values typed into the login space
 let userName = document.querySelector("#loginCredentials1");
 let passWord = document.querySelector("#loginCredentials2");
-
-//Sign up info
 
 //The username input function
 userName.addEventListener("click", function UserID() {
@@ -36,27 +32,37 @@ document.addEventListener("keydown", function Login(e) {
   }
 });
 
-//function for relocating to web application
+//function for relocating to web application home page
 function webApplication() {
   window.location.href =
     "http://127.0.0.1:5500/expenseTrackerProject/NEA-frontend/homepage.html";
 }
 
-//user authenticator
-function validateForm() {
-  function linearSearch() {
-    let input1 = userName.value;
-    let input2 = passWord.value;
+//user authenticator - the linear search crosschecks the username and password inputted to usernam and passwords stored
+function linearSearch() {
+  let input1 = userName.value;
+  let input2 = passWord.value;
+  const registration1 = [];
+  const registration2 = [];
 
-    for (let i = 0; i < storedData1.length; i++) {
-      //Need to make a linear search
-      if (input1 === storedData1[i] && input2 === storedData2[i]) {
-        return true;
+  //fetch used to get the data of the database stored in a URL and then compared to the inputs of the user
+  fetch("http://localhost:3000/fetchdata")
+    .then((response) => {
+      return response.json();
+    })
+    .then((fetchdata) => {
+      fetchdata.forEach((fetchdata) => {
+        const username = `${fetchdata.username}`;
+        const password = `${fetchdata.password}`;
+        registration1.push(username);
+        registration2.push(password);
+      });
+
+      for (let i = 0; i < registration1.length; i++) {
+        if (input1 === registration1[i] && input2 === registration2[i]) {
+          webApplication();
+        }
       }
-    }
-  }
-
-  if (linearSearch()) {
-    webApplication();
-  } else alert("incorrect credentials");
+    });
 }
+
