@@ -38,6 +38,7 @@ function webApplication() {
     "http://127.0.0.1:5500/expenseTrackerProject/NEA-frontend/homepage.html";
 }
 
+<<<<<<< HEAD
 //user authenticator - the linear search crosschecks the username and password inputted to usernam and passwords stored
 function linearSearch() {
   let input1 = userName.value;
@@ -46,6 +47,16 @@ function linearSearch() {
   const registration2 = [];
 
   //fetch used to get the data of the database stored in a URL and then compared to the inputs of the user
+=======
+//user authenticator
+
+function linearSearch() {
+  let input1 = userName.value;
+  let input2 = passWord.value;
+  const registration1 = [];
+  const registration2 = [];
+
+>>>>>>> 4b5cbe2 (succesfully connected complementary info (Database) to login authentication)
   fetch("http://localhost:3000/fetchdata")
     .then((response) => {
       return response.json();
@@ -64,5 +75,98 @@ function linearSearch() {
         }
       }
     });
+<<<<<<< HEAD
 }
 
+=======
+
+  // for (let i = 0; i < storedData1.length; i++) {
+  //   //Need to make a linear search
+  //   if (input1 === storedData1[i] && input2 === storedData2[i]) {
+  //     return true;
+  //   }
+  // }
+}
+
+// const registration = [];
+// fetch("http://localhost:3000/fetchdata")
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((fetchdata) => {
+//     // fetchdata.forEach((fetchdata) => {
+//     //   const username = `${fetchdata.username}`;
+//     //   console.log(username);
+
+//     //   document
+//     //     .querySelector(".hi")
+//     //     .insertAdjacentHTML("beforeend", username);
+//     // });
+
+//     console.log(fetchdata[0].username);
+//     console.log(fetchdata[0].password);
+//     registration.push(fetchdata[0].username);
+//     console.log(registration[0]);
+//   });
+
+// const help = function () {
+//   const registration1 = [];
+//   const registration2 = [];
+
+//   fetch("http://localhost:3000/fetchdata")
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((fetchdata) => {
+//       fetchdata.forEach((fetchdata) => {
+//         const username = `${fetchdata.username}`;
+//         const password = `${fetchdata.password}`;
+//         registration1.push(username);
+//         registration2.push(password);
+//       });
+
+//       for (let i = 0; i < registration1.length; i++) {
+//         if (input1 === registration1[i] && input2 === registration2[i]) {
+//           return true;
+//         }
+//       }
+//     });
+// };
+
+// help();
+
+// function linearSearch() {
+//   let input1 = "Aron";
+//   let input2 = "Max";
+//   const registration1 = [];
+//   const registration2 = [];
+
+//   fetch("http://localhost:3000/fetchdata")
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((fetchdata) => {
+//       fetchdata.forEach((fetchdata) => {
+//         const username = `${fetchdata.username}`;
+//         const password = `${fetchdata.password}`;
+//         registration1.push(username);
+//         registration2.push(password);
+//       });
+
+//       for (let i = 0; i < registration1.length; i++) {
+//         if (input1 === registration1[i] && input2 === registration2[i]) {
+//           webApplication();
+//         } else {
+//           alert("incorrect credentials");
+//         }
+//       }
+//     });
+
+//   // for (let i = 0; i < storedData1.length; i++) {
+//   //   //Need to make a linear search
+//   //   if (input1 === storedData1[i] && input2 === storedData2[i]) {
+//   //     return true;
+//   //   }
+//   // }
+// }
+>>>>>>> 4b5cbe2 (succesfully connected complementary info (Database) to login authentication)
