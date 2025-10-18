@@ -25,11 +25,12 @@ const corsOptions = {
 };
 
 //middleware
+//CORS allows for data to be fetch from different ports so my front end (5500) can get data from the back end (3000)
 app.use(cors());
 app.use(express.static(path.join(__dirname, "NEA-frontend")));
 app.use(express.json());
 
-//signup page where information of URL is requested from the server
+//signup page where the user name and password is created. Then the URL of the page that has the created username and password, is requested by the server
 app.get("/signUp", (req, res) => {
   res.sendFile("signUp.html", { root: __dirname });
 });
@@ -38,10 +39,11 @@ app.get("/signUp", (req, res) => {
 app.post("/form", (req, res) => {
   const { username, password } = req.body;
 
-  //The database checks for no error and is stored in database when submit is clicked
+  //This is the query asking to insert the inputs from form box of login page to the database in postgresql
   const insert_query =
     "INSERT INTO expensesheet (username,password) VALUES ($1,$2)";
 
+  //The database checks for no error and is stored in database when submit is clicked
   con.query(insert_query, [username, password], (err, result) => {
     if (err) {
       res.send(err);
@@ -53,7 +55,7 @@ app.post("/form", (req, res) => {
   });
 });
 
-//To delete data from the database
+//To delete data from the database (using POSTMAN software)
 app.delete("/delete/:username", (req, res) => {
   const username = req.params.username;
   const delete_query = "Delete from expensesheet where username = $1";
@@ -66,6 +68,7 @@ app.delete("/delete/:username", (req, res) => {
   });
 });
 
+//this get method creates a URL with all the database stored in JSON format
 app.get("/fetchdata", (req, res) => {
   const fetch_query = "SELECT * from expensesheet";
   con.query(fetch_query, (err, result) => {

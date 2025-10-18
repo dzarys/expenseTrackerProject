@@ -39,6 +39,7 @@ function webApplication() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //user authenticator - the linear search crosschecks the username and password inputted to usernam and passwords stored
 function linearSearch() {
   let input1 = userName.value;
@@ -50,13 +51,20 @@ function linearSearch() {
 =======
 //user authenticator
 
+=======
+//user authenticator - the linear search crosschecks the username and password inputted to usernam and passwords stored
+>>>>>>> 57323a1 (added comments to make new code easy to understand)
 function linearSearch() {
   let input1 = userName.value;
   let input2 = passWord.value;
   const registration1 = [];
   const registration2 = [];
 
+<<<<<<< HEAD
 >>>>>>> 4b5cbe2 (succesfully connected complementary info (Database) to login authentication)
+=======
+  //fetch used to get the data of the database stored in a URL and then compared to the inputs of the user
+>>>>>>> 57323a1 (added comments to make new code easy to understand)
   fetch("http://localhost:3000/fetchdata")
     .then((response) => {
       return response.json();
@@ -75,6 +83,7 @@ function linearSearch() {
         }
       }
     });
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -170,3 +179,6 @@ function linearSearch() {
 //   // }
 // }
 >>>>>>> 4b5cbe2 (succesfully connected complementary info (Database) to login authentication)
+=======
+}
+>>>>>>> 57323a1 (added comments to make new code easy to understand)
