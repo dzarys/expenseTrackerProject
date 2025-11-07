@@ -44,6 +44,7 @@ app.post("/form", (req, res) => {
     "INSERT INTO expensesheet (username,password) VALUES ($1,$2)";
 
   //The database checks for no error and is stored in database when submit is clicked
+
   con.query(insert_query, [username, password], (err, result) => {
     if (err) {
       res.send(err);

@@ -34,7 +34,8 @@ document.addEventListener("keydown", function Login(e) {
 
 //function for relocating to web application home page
 function webApplication() {
-  window.location.href = "http://127.0.0.1:5500/NEA-frontend/homepage.html";
+  window.location.href =
+    "http://127.0.0.1:5500/expenseTrackerProject/NEA-frontend/homepage.html";
 }
 
 //user authenticator - the linear search crosschecks the username and password inputted to usernam and passwords stored

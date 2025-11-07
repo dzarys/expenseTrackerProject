@@ -108,22 +108,7 @@
     });
 
     function converter() {
-      if (fromDropDown.value !== "Select") {
-        if (Number(inpCurrency.value)) {
-          let currentExchangeRate = prompt(
-            `Please input current exchange rate for your currency`
-          );
-          let exchangeRate = Number(inpCurrency.value) * currentExchangeRate;
-          outCurrency.placeholder = exchangeRate;
-        } else if (inpCurrency.value == "") {
-          alert("please fill in the input box below");
-        } else {
-          alert("invalid input! Please input a numerical value.");
-        }
-      } else {
-        alert("Check you have selected a currency");
-        inpCurrency.value = "";
-      }
+      fetch(`https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD`);
     }
   </script>
 </html>
