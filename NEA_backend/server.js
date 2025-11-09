@@ -1,3 +1,9 @@
+//implementing dotenv for sensitive data
+require("dotenv").config();
+
+//adding config to store variable of env
+const config = require("./src/config.js");
+
 //postgreSQL connecting the database to node js
 const { Client } = require("pg");
 
@@ -12,10 +18,12 @@ const con = new Client({
 con.connect().then(() => console.log("connected"));
 
 //backeend node js code to POST and receive registration
+const axios = require("axios");
 const express = require("express");
 const path = require("path");
 const app = express();
 const cors = require("cors");
+const { CLIENT_RENEG_LIMIT } = require("tls");
 
 // CORS options to allow requests from frontend running on port 5500
 const corsOptions = {
@@ -81,7 +89,16 @@ app.get("/fetchdata", (req, res) => {
   });
 });
 
+axios
+  .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/GBP`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((response) => {
+    console.log(error);
+  });
+
 //This is the server port and just shows the server is running
 app.listen(3000, () => {
-  console.log("server is listening...");
+  console.log(`server is listening... Port:${config.port}`);
 });
