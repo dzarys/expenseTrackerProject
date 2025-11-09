@@ -1,2 +1,2 @@
-./node_modules
+NEA_backend/node_modules/*
 NEA_backend/package-lock.json
