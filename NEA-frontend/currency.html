@@ -106,5 +106,13 @@
         alert("Please select a currency");
       }
     });
+
+    fetch("http://localhost:3000/EURconvert")
+      .then((response) => {
+        return response.json();
+      })
+      .then((convert) => {
+        console.log(...convert);
+      });
   </script>
 </html>

@@ -52,7 +52,6 @@ app.post("/form", (req, res) => {
     "INSERT INTO expensesheet (username,password) VALUES ($1,$2)";
 
   //The database checks for no error and is stored in database when submit is clicked
-
   con.query(insert_query, [username, password], (err, result) => {
     if (err) {
       res.send(err);
@@ -89,14 +88,28 @@ app.get("/fetchdata", (req, res) => {
   });
 });
 
-axios
-  .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/GBP`)
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((response) => {
-    console.log(error);
-  });
+app.get("/EURconvert", (req, res) => {
+  const EURconversion = [];
+  const EUR = axios
+    .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/EUR`)
+    .then((response) => {
+      console.log(response.data.conversion_rates.GBP);
+      EURconversion.push(response.data.conversion_rates.GBP);
+      res.send(EURconversion);
+    });
+});
+
+// axios
+//   .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/EUR`)
+//   .then((response) => {
+//     console.log(response.data.conversion_rates.GBP);
+//     const EURtoGBP = response.data.conversion_rates.GBP
+//     res.send(response)
+//     return EURtoGBP
+//   })
+//   .catch((response) => {
+//     console.log(error);
+//   });
 
 //This is the server port and just shows the server is running
 app.listen(3000, () => {
