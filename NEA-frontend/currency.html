@@ -107,17 +107,40 @@
       }
     });
 
+    //This fucntion when clicked converts the numerical input into GPB
     function converter() {
-      fetch("http://localhost:3000/EURconvert")
-        .then((response) => {
-          return response.json();
-        })
-        .then((convert) => {
-          const EURconversion = convert[0];
-          if (fromDropDown.value === "EUR") {
-            outCurrency.value = (EURconversion * inpCurrency.value).toFixed(2);
-          }
-        });
+      //checks to see if its euros being converted to pounds
+      if (fromDropDown.value === "EUR") {
+        //fetches the API data that has EUR to GBP converion rate
+        fetch("http://localhost:3000/EURconvert")
+          .then((response) => {
+            return response.json();
+          })
+          .then((convert) => {
+            const EURconversion = convert[0];
+            if (fromDropDown.value === "EUR") {
+              outCurrency.value = (EURconversion * inpCurrency.value).toFixed(
+                2
+              );
+            }
+          });
+      }
+      //if it not euros then it converts USD to GBP
+      else {
+        //fetches the API data that has EUR to GBP converion rate
+        fetch("http://localhost:3000/USDconvert")
+          .then((response) => {
+            return response.json();
+          })
+          .then((convert) => {
+            const USDconversion = convert[0];
+            if (fromDropDown.value === "USD") {
+              outCurrency.value = (USDconversion * inpCurrency.value).toFixed(
+                2
+              );
+            }
+          });
+      }
     }
   </script>
 </html>

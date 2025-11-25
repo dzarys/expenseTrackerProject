@@ -88,28 +88,27 @@ app.get("/fetchdata", (req, res) => {
   });
 });
 
+//The API data for converting EUR to GBP
 app.get("/EURconvert", (req, res) => {
   const EURconversion = [];
   const EUR = axios
     .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/EUR`)
     .then((response) => {
-      console.log(response.data.conversion_rates.GBP);
       EURconversion.push(response.data.conversion_rates.GBP);
       res.send(EURconversion);
     });
 });
 
-// axios
-//   .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/EUR`)
-//   .then((response) => {
-//     console.log(response.data.conversion_rates.GBP);
-//     const EURtoGBP = response.data.conversion_rates.GBP
-//     res.send(response)
-//     return EURtoGBP
-//   })
-//   .catch((response) => {
-//     console.log(error);
-//   });
+//The API data for converting USD to GBP
+app.get("/USDconvert", (req, res) => {
+  const USDconversion = [];
+  const USD = axios
+    .get(`https://v6.exchangerate-api.com/v6/${config.env}/latest/USD`)
+    .then((response) => {
+      USDconversion.push(response.data.conversion_rates.GBP);
+      res.send(USDconversion);
+    });
+});
 
 //This is the server port and just shows the server is running
 app.listen(3000, () => {
